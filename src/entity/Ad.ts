@@ -1,4 +1,5 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany, JoinColumn} from "typeorm";
+import { Comment } from './Comment';
 
 @Entity()
 export class Ad {
@@ -12,5 +13,6 @@ export class Ad {
     @Column()
     date: Date;
 
-
+    @OneToMany(type => Comment, Comment => Comment.ad)
+    comments: Comment[];
 }

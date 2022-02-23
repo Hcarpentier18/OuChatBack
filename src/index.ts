@@ -2,11 +2,39 @@ import "reflect-metadata";
 import {createConnection} from "typeorm";
 import {User} from "./entity/User";
 import express from 'express';
-import * as Config from '../config';
+import Config from '../config';
+import { Photo } from './entity/Photo';
 
 const app = express();
 
 
+createConnection().then(connection => {
+
+    let photoRepository = connection.getRepository(Photo);
+
+    // let photo = new Photo();
+    // photo.path = "/photos2";
+
+    // photoRepository.save(photo).then(response => {
+    //     console.log("Normalement c'est sauvegardé !");
+    // });
+
+    // photoRepository.find().then((photos) => {
+    //     photos.forEach((photo, index) => {
+    //         console.log(index, photo.path);
+    //     });
+    // });
+
+    // photoRepository.findOne({path: "/photos"}).then((photo) => {
+    //     console.log(photo);
+    // })
+
+    // photoRepository.findOne(1).then((photoToRemove) => {
+    //     photoRepository.remove(photoToRemove);
+    // });
+
+    // here you can start to work with your entities
+}).catch(error => console.log(error));
 
 
 

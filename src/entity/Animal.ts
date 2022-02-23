@@ -1,4 +1,5 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn} from "typeorm";
+import { Photo } from './Photo';
 
 @Entity()
 export class Animal {
@@ -27,4 +28,7 @@ export class Animal {
     @Column()
     chip: string;
 
+    @OneToOne(type => Photo)
+    @JoinColumn()
+    photo: Photo;
 }

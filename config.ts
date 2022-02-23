@@ -1,2 +1,5 @@
-export const port = "3000";
-export const domain = "localhost";
+class Config {
+    public port = "3000";
+    public domain = "82.64.178.199";
+}
+export default new Config();

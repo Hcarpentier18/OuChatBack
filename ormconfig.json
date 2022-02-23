@@ -1,9 +1,9 @@
 {
    "type": "mariadb",
-   "host": "localhost",
+   "host": "82.64.178.199",
    "port": 3306,
    "username": "ouChat",
-   "password": "OuCh@t/",
+   "password": "0uCh@t/",
    "database": "ouChat",
    "synchronize": true,
    "logging": false,
