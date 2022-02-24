@@ -1,5 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from "typeorm";
 import { Ad } from './Ad';
+import { User } from './User';
 
 @Entity()
 export class Comment {
@@ -10,6 +11,10 @@ export class Comment {
     @Column("text")
     content: string;
 
-    @ManyToOne(type => Ad, Ad => Ad.comments)
+    @ManyToOne(type => Ad, ad => ad.comments)
     ad: Ad;
+
+    @ManyToOne(type => User, user => user.comments)
+    user: User;
+
 }

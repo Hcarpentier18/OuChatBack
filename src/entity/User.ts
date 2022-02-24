@@ -1,5 +1,6 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
-
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import { Comment } from "./comment";
+import { Animal } from './Animal';
 @Entity()
 export class User {
 
@@ -7,12 +8,17 @@ export class User {
     id: number;
 
     @Column()
-    firstName: string;
+    pseudo: string;
 
     @Column()
-    lastName: string;
+    mail: string;
 
     @Column()
-    age: number;
+    password: string;
 
+    @OneToMany(type => Comment, comment => comment.user)
+    comments: Comment[];
+
+    @OneToMany(type => Animal, animal => animal.user)
+    animals: Animal;
 }

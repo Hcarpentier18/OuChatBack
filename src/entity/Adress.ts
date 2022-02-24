@@ -1,4 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import { Ad } from './Ad';
 
 @Entity()
 export class Adress {
