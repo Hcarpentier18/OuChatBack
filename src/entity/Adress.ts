@@ -19,6 +19,4 @@ export class Adress {
     @Column()
     number: string;
 
-
-
 }

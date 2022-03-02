@@ -6,6 +6,7 @@
    "password": "0uCh@t/",
    "database": "ouChat",
    "synchronize": true,
+   "keepConnectionAlive": true,
    "logging": false,
    "entities": [
       "src/entity/**/*.ts"
