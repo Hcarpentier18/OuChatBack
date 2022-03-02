@@ -11,10 +11,10 @@ export class Comment {
     @Column("text")
     content: string;
 
-    @ManyToOne(type => Ad, ad => ad.comments)
+    @ManyToOne(type => Ad, Ad => Ad.comments)
     ad: Ad;
 
-    @ManyToOne(type => User, user => user.comments)
+    @ManyToOne(type => User, User => User.comments)
     user: User;
 
 }

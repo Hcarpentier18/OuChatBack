@@ -16,7 +16,7 @@ export class Ad {
     @Column()
     date: Date;
 
-    @OneToMany(type => Comment, comment => comment.ad)
+    @OneToMany(type => Comment, Comment => Comment.ad)
     comments: Comment[];
 
     @OneToOne(type => Animal)

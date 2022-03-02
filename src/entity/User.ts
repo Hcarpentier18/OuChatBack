@@ -16,9 +16,9 @@ export class User {
     @Column()
     password: string;
 
-    @OneToMany(type => Comment, comment => comment.user)
+    @OneToMany(type => Comment, Comment => Comment.user)
     comments: Comment[];
 
-    @OneToMany(type => Animal, animal => animal.user)
+    @OneToMany(type => Animal, Animal => Animal.user)
     animals: Animal;
 }
