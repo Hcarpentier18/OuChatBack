@@ -9,7 +9,7 @@ import AddressRouter from './routes/Address.route';
 const app = express();
 
 
-// createConnection().then(connection => {
+createConnection().then(connection => {
 //
 //     let photoRepository = connection.getRepository(Photo);
 //
@@ -35,16 +35,16 @@ const app = express();
 //     // });
 //
 //     // here you can start to work with your entities
-// }).catch(error => console.log(error));
+    app.use("/adresses", AddressRouter);
+
+
+    app.listen(Config.port, () => {
+        return console.log(`Server is listening on ${Config.port}`);
+    });
+}).catch(error => console.log(error));
 //
 
 
-app.use("/adresses", AddressRouter);
-
-
-app.listen(Config.port, () => {
-    return console.log(`Server is listening on ${Config.port}`);
-});
 
 
 // createConnection().then(async connection => {

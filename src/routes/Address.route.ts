@@ -1,19 +1,17 @@
 import { Adress } from '../entity/Adress';
-import { createConnection } from "typeorm";
+import {getRepository} from "typeorm";
 import { express, Router} from 'express';
 
 const AddressRouter = Router();
 
 AddressRouter.get('/getAll', (req, res) => {
-    createConnection().then((connection) => {
-        const AddressRepository = connection.getRepository(Adress);
+    const AddressRepository = getRepository(Adress);
 
-        AddressRepository.find().then((addresses) => {
-            res.send(addresses);
-        });
-    }).catch((error) => {
-        console.error(error);
-    })
+    AddressRepository.find().then((addresses) => {
+        res.send(addresses);
+    });
+}).catch((error) => {
+    console.error(error);
 })
 
 AddressRouter.post('/insert', (req, res) => {
