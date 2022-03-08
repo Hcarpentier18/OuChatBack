@@ -2,7 +2,7 @@ import {Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, ManyToMany,
 import { Comment } from './Comment';
 import { Animal } from './Animal';
 import { User } from './User';
-import { Adress } from './Adress';
+import { Adresse } from './Adresse';
 
 @Entity()
 export class Ad {
@@ -27,7 +27,7 @@ export class Ad {
     @JoinTable()
     users: User[];
 
-    @OneToOne(type => Adress)
+    @OneToOne(type => Adresse)
     @JoinColumn()
-    adress: Adress;
+    adress: Adresse;
 }
