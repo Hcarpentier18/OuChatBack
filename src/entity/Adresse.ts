@@ -1,8 +1,7 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
-import { Ad } from './Ad';
+import {Entity, BaseEntity, PrimaryGeneratedColumn, Column} from "typeorm";
 
 @Entity()
-export class Adresse {
+export class Adresse extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id: number;

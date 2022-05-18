@@ -1,11 +1,11 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, ManyToMany, JoinColumn, JoinTable} from "typeorm";
+import {Entity, BaseEntity,PrimaryGeneratedColumn, Column, OneToMany, OneToOne, ManyToMany, JoinColumn, JoinTable, ManyToOne} from "typeorm";
 import { Comment } from './Comment';
 import { Animal } from './Animal';
 import { User } from './User';
 import { Adresse } from './Adresse';
 
 @Entity()
-export class Ad {
+export class Ad extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id: number;
@@ -21,13 +21,13 @@ export class Ad {
 
     @OneToOne(type => Animal)
     @JoinColumn()
-    animal: Animal;
+    animals: Animal;
 
-    @ManyToMany(() => User)
+    @ManyToOne(() => User)
     @JoinTable()
     users: User[];
 
     @OneToOne(type => Adresse)
     @JoinColumn()
-    adress: Adresse;
+    adresses: Adresse;
 }

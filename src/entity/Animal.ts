@@ -1,9 +1,9 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToOne, ManyToOne, JoinColumn} from "typeorm";
+import {Entity, BaseEntity,PrimaryGeneratedColumn, Column, OneToOne, ManyToOne, JoinColumn} from "typeorm";
 import { Photo } from './Photo';
 import { User } from './User';
 
 @Entity()
-export class Animal {
+export class Animal extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id: number;
